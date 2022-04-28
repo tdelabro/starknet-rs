@@ -14,14 +14,14 @@ If you're a cryptographer, you're welcome to contribute by reviewing the impleme
 
 ## Benchmark
 
-On the author's machine with _Intel(R) Core(TM) i7-8700K CPU @ 3.70GHz_ running _Ubuntu 20.04.2 LTS_:
+On the author's machine with _AMD Ryzen 9 5950X 16-Core Processor_ running _Ubuntu 20.04.4 LTS_:
 
 ```log
-ecdsa_get_public_key    time:   [1.6202 ms 1.6309 ms 1.6425 ms]
-ecdsa_sign              time:   [1.6612 ms 1.6754 ms 1.6912 ms]
-ecdsa_verify            time:   [5.4950 ms 5.5259 ms 5.5599 ms]
-pedersen_hash           time:   [3.1183 ms 3.1354 ms 3.1560 ms]
-rfc6979_generate_k      time:   [10.625 us 10.691 us 10.770 us]
+ecdsa_get_public_key    time:   [1.4548 ms 1.4559 ms 1.4573 ms]
+ecdsa_sign              time:   [1.4178 ms 1.4218 ms 1.4261 ms]
+ecdsa_verify            time:   [3.0722 ms 3.0742 ms 3.0764 ms]
+pedersen_hash           time:   [2.6841 ms 2.6885 ms 2.6937 ms]
+rfc6979_generate_k      time:   [2.3057 us 2.3080 us 2.3108 us]
 ```
 
 ## Credits
