@@ -1,5 +1,5 @@
 use crate::{
-    ec_point::EcPoint,
+    ec_point::AffinePoint,
     fe_utils::{add_unbounded, bigint_mul_mod_floor, mod_inverse, mul_mod_floor},
     pedersen_params::{CONSTANT_POINTS, EC_ORDER},
     FieldElement, SignError, VerifyError,
@@ -91,7 +91,7 @@ pub fn verify(
         return Err(VerifyError::InvalidS);
     }
 
-    let full_public_key = EcPoint::from_x(*public_key);
+    let full_public_key = AffinePoint::from_x(*public_key);
 
     let generator = &CONSTANT_POINTS[1];
 

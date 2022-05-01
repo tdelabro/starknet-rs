@@ -3,15 +3,24 @@ use crate::{
     FieldElement,
 };
 
-/// A point on an elliptic curve over [FieldElement].
+/// An affine point on an elliptic curve over [FieldElement].
 #[derive(Copy, Clone, Debug, Eq, PartialEq)]
-pub struct EcPoint {
+pub struct AffinePoint {
     pub x: FieldElement,
     pub y: FieldElement,
     pub infinity: bool,
 }
 
-impl EcPoint {
+/// A projective point on an elliptic curve over [FieldElement].
+#[derive(Copy, Clone, Debug, Eq, PartialEq)]
+pub struct ProjectivePoint {
+    pub x: FieldElement,
+    pub y: FieldElement,
+    pub z: FieldElement,
+    pub infinity: bool,
+}
+
+impl AffinePoint {
     pub fn from_x(x: FieldElement) -> Self {
         let y_squared = x * x * x + ALPHA * x + BETA;
         Self {
@@ -21,7 +30,7 @@ impl EcPoint {
         }
     }
 
-    fn identity() -> EcPoint {
+    fn identity() -> AffinePoint {
         Self {
             x: FieldElement::ZERO,
             y: FieldElement::ZERO,
@@ -29,7 +38,7 @@ impl EcPoint {
         }
     }
 
-    fn double(&self) -> EcPoint {
+    fn double(&self) -> AffinePoint {
         if self.infinity {
             return *self;
         }
@@ -46,14 +55,14 @@ impl EcPoint {
         let result_x = (lambda * lambda) - self.x - self.x;
         let result_y = lambda * (self.x - result_x) - self.y;
 
-        EcPoint {
+        AffinePoint {
             x: result_x,
             y: result_y,
             infinity: false,
         }
     }
 
-    pub fn add(&self, other: &EcPoint) -> EcPoint {
+    pub fn add(&self, other: &AffinePoint) -> AffinePoint {
         if self.infinity {
             return *other;
         }
@@ -71,23 +80,23 @@ impl EcPoint {
         let result_x = (lambda * lambda) - self.x - other.x;
         let result_y = lambda * (self.x - result_x) - self.y;
 
-        EcPoint {
+        AffinePoint {
             x: result_x,
             y: result_y,
             infinity: false,
         }
     }
 
-    pub fn subtract(&self, other: &EcPoint) -> EcPoint {
-        self.add(&EcPoint {
+    pub fn subtract(&self, other: &AffinePoint) -> AffinePoint {
+        self.add(&AffinePoint {
             x: other.x,
             y: -other.y,
             infinity: other.infinity,
         })
     }
 
-    pub fn multiply(&self, bits: &[bool]) -> EcPoint {
-        let mut product = EcPoint::identity();
+    pub fn multiply(&self, bits: &[bool]) -> AffinePoint {
+        let mut product = AffinePoint::identity();
         for b in bits.iter().rev() {
             product = product.double();
             if *b {

@@ -1,4 +1,4 @@
-use crate::{ec_point::EcPoint, FieldElement};
+use crate::{ec_point::AffinePoint, FieldElement};
 
 pub const EC_ORDER: FieldElement = FieldElement::from_mont([
     8939893405601011193,
@@ -21,8 +21,8 @@ pub const BETA: FieldElement = FieldElement::from_mont([
     88155977965380735,
 ]);
 
-pub const CONSTANT_POINTS: [EcPoint; 506] = [
-    EcPoint {
+pub const CONSTANT_POINTS: [AffinePoint; 506] = [
+    AffinePoint {
         x: FieldElement::from_mont([
             1933903796324928314,
             7739989395386261137,
@@ -37,7 +37,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14484022957141291997,
             5884444832209845738,
@@ -52,7 +52,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3602345268353203007,
             13758484295849329960,
@@ -67,7 +67,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16390798442227108542,
             4459397208487568853,
@@ -82,7 +82,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1852679819546688474,
             11720024525106607284,
@@ -97,7 +97,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11906898082339326253,
             14005401007936979841,
@@ -112,7 +112,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7879889331196042675,
             8000735345716179736,
@@ -127,7 +127,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             653276751355607085,
             11259700290765893389,
@@ -142,7 +142,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17163721246494031414,
             307925883507963363,
@@ -157,7 +157,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             12730042055084817937,
             12476999969825171350,
@@ -172,7 +172,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7200790303955253061,
             15209533175674975866,
@@ -187,7 +187,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7869312440415945038,
             7356016458822800971,
@@ -202,7 +202,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             18427926721256346350,
             3567143268310080114,
@@ -217,7 +217,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16682506297868074312,
             1837229207514263972,
@@ -232,7 +232,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14458180765091909135,
             17451155129104877172,
@@ -247,7 +247,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9076552185096894072,
             16541014821168959001,
@@ -262,7 +262,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             18233287364623409716,
             6804217814828077591,
@@ -277,7 +277,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13799264192008471703,
             1187520579288929996,
@@ -292,7 +292,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13569759248702400487,
             2219552815915070740,
@@ -307,7 +307,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9166168240307809179,
             7267626630440466821,
@@ -322,7 +322,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7158238976582520500,
             17466084711122018011,
@@ -337,7 +337,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9217391733185198099,
             7148386638145606627,
@@ -352,7 +352,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             15272905515130758396,
             7740754165781175316,
@@ -367,7 +367,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17079541752746566530,
             13730452703559725824,
@@ -382,7 +382,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1813671267290589542,
             12588905877195042878,
@@ -397,7 +397,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             12671228573221303968,
             3494283571362176810,
@@ -412,7 +412,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17921018486802185000,
             10275967818454321187,
@@ -427,7 +427,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14656240340652604805,
             10731029630487021311,
@@ -442,7 +442,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             10799811216760477868,
             11046605544841105187,
@@ -457,7 +457,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             10247406360036252715,
             11965212112825588083,
@@ -472,7 +472,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3896398529683574377,
             543012859046617575,
@@ -487,7 +487,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7288473212619386100,
             14962866603698149592,
@@ -502,7 +502,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11957874130445520696,
             10289982057970345434,
@@ -517,7 +517,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             15910526439729959780,
             13874544930631926961,
@@ -532,7 +532,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13799513050911057536,
             2590461638578316014,
@@ -547,7 +547,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6832649820950921050,
             3845329417976282843,
@@ -562,7 +562,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             2896970725654075560,
             2285627418290468350,
@@ -577,7 +577,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             10544622534701546458,
             646011323718272588,
@@ -592,7 +592,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1054090983649635360,
             6004253059590525804,
@@ -607,7 +607,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             15782968248884197313,
             4609012873316991629,
@@ -622,7 +622,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6543813269245120105,
             14561760611881389881,
@@ -637,7 +637,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11882930742831947147,
             2213839430776654055,
@@ -652,7 +652,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7322028907819632210,
             7161255128298438498,
@@ -667,7 +667,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11715730728876465889,
             16218355608055007684,
@@ -682,7 +682,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             4702474481306201537,
             9122467655642606453,
@@ -697,7 +697,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1886337949885197020,
             7016602582562894302,
@@ -712,7 +712,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3400883644215877870,
             438073050201204844,
@@ -727,7 +727,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1210268042755441864,
             7419302776314326295,
@@ -742,7 +742,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14061065521891010000,
             1691402205321715114,
@@ -757,7 +757,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14181197660082525198,
             11451630337216023699,
@@ -772,7 +772,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11883231574900606121,
             16223549695635614257,
@@ -787,7 +787,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3362080833133643325,
             16133774404000462478,
@@ -802,7 +802,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16169193868986078958,
             15000798996576289975,
@@ -817,7 +817,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             12279580901711110572,
             2792774237375615203,
@@ -832,7 +832,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             8560047375414405155,
             16022580704369903734,
@@ -847,7 +847,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             15192640977218456683,
             7642830312317606619,
@@ -862,7 +862,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7693974263721678629,
             33579516692986597,
@@ -877,7 +877,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3099026458133313775,
             424581470853922619,
@@ -892,7 +892,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17516859832988759066,
             6238034585368941619,
@@ -907,7 +907,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16743026603249202090,
             17837588755517845739,
@@ -922,7 +922,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             8903525461006129974,
             10700825485841907034,
@@ -937,7 +937,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             8852988789146884907,
             17141669279513341774,
@@ -952,7 +952,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             10775011944647074859,
             7176623126845579881,
@@ -967,7 +967,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             700181679368528816,
             1756698401865861304,
@@ -982,7 +982,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1933801535469622521,
             3712380893878257966,
@@ -997,7 +997,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14972014998466054540,
             3589789253194742926,
@@ -1012,7 +1012,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             4592817347608487007,
             14742329847762694342,
@@ -1027,7 +1027,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             2449667921754092398,
             7430448426418535434,
@@ -1042,7 +1042,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             8902884160856772127,
             4424571130823441212,
@@ -1057,7 +1057,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13119040227704065872,
             10283296353837464260,
@@ -1072,7 +1072,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             2330644698460047022,
             1830510293903313505,
@@ -1087,7 +1087,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13172788340609719151,
             1289891628020538798,
@@ -1102,7 +1102,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13509779570389574930,
             7753622119491471523,
@@ -1117,7 +1117,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             8076391972439179468,
             4357745794691188852,
@@ -1132,7 +1132,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             2390104098425371137,
             9945308228606926081,
@@ -1147,7 +1147,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             4505878729237813674,
             11308354624271000004,
@@ -1162,7 +1162,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11614242505459576253,
             9472374006962441620,
@@ -1177,7 +1177,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1494103255496409199,
             1833103195045654228,
@@ -1192,7 +1192,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13038559325097185469,
             11351095728630010,
@@ -1207,7 +1207,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             967218525833742881,
             1136316969114429212,
@@ -1222,7 +1222,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9752170768778345500,
             11180044155633572216,
@@ -1237,7 +1237,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             145789625051514116,
             15782134208422813407,
@@ -1252,7 +1252,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17919061668989773686,
             13853400680836806791,
@@ -1267,7 +1267,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1334966233672052404,
             763075755257353384,
@@ -1282,7 +1282,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             4886582634726344081,
             15181396214845717169,
@@ -1297,7 +1297,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             5376947007269021547,
             13493838916795384424,
@@ -1312,7 +1312,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16432322289735054978,
             18296385176598609743,
@@ -1327,7 +1327,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             10170641401404508761,
             17251647014520625770,
@@ -1342,7 +1342,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             134155876155516448,
             14575831303031746204,
@@ -1357,7 +1357,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1335881449167631373,
             8710322815721430650,
@@ -1372,7 +1372,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             8134523757326269567,
             255526369733009320,
@@ -1387,7 +1387,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             5492625370727322536,
             3044218968107244210,
@@ -1402,7 +1402,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14606832075259989213,
             16294199378437151709,
@@ -1417,7 +1417,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             2337751993962490504,
             6040535464251733688,
@@ -1432,7 +1432,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             244619060966139928,
             6401726426533477060,
@@ -1447,7 +1447,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17356096619281294545,
             16523465360670256312,
@@ -1462,7 +1462,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9425582818516945220,
             13731072446765678892,
@@ -1477,7 +1477,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16994385524496918929,
             1328905471200221429,
@@ -1492,7 +1492,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11365661652186370507,
             9994401749068072126,
@@ -1507,7 +1507,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             2484481554015266223,
             3663595951226664960,
@@ -1522,7 +1522,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17661075986696061434,
             17854256601651174284,
@@ -1537,7 +1537,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17712484864251020702,
             1587162055552445255,
@@ -1552,7 +1552,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             18399565408825599651,
             16518074045410860203,
@@ -1567,7 +1567,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16038626309837663374,
             7012530695332564432,
@@ -1582,7 +1582,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13985630428809375675,
             16487742374437159709,
@@ -1597,7 +1597,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             2535637427905739826,
             1571513156827155573,
@@ -1612,7 +1612,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             12469774989881252017,
             866097597963545530,
@@ -1627,7 +1627,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             10128158549849454172,
             11010387839536264039,
@@ -1642,7 +1642,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             538990576728195536,
             14102923768786963683,
@@ -1657,7 +1657,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13530751588527169008,
             10542759246992781880,
@@ -1672,7 +1672,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             18115051000921170996,
             3527925097048878406,
@@ -1687,7 +1687,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7435279372874967985,
             18226890801233452010,
@@ -1702,7 +1702,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13603321821984318279,
             2750070338154541100,
@@ -1717,7 +1717,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             5830384142561664243,
             12770134929230740651,
@@ -1732,7 +1732,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17334543668032931058,
             16911054702318348791,
@@ -1747,7 +1747,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             10511043541834115430,
             10478079506959655127,
@@ -1762,7 +1762,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11623744774981271010,
             1357497067044047617,
@@ -1777,7 +1777,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14813151783169135977,
             10443301082515561028,
@@ -1792,7 +1792,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             644002279831188687,
             13735331836547151896,
@@ -1807,7 +1807,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             2373078539314638601,
             3852557190792210663,
@@ -1822,7 +1822,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13655983463093243119,
             18236648021999646032,
@@ -1837,7 +1837,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             12870905268268394906,
             1805898204000558358,
@@ -1852,7 +1852,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             5478723962717773018,
             4490812538134409335,
@@ -1867,7 +1867,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16230913515947001106,
             17631437482230222375,
@@ -1882,7 +1882,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1072359028268289744,
             13138432463654194571,
@@ -1897,7 +1897,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             809323524305395051,
             4704070610733443370,
@@ -1912,7 +1912,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             8665436316118001416,
             6117501295443337589,
@@ -1927,7 +1927,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3011060968239530068,
             12808819234879166535,
@@ -1942,7 +1942,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             10542399942827970555,
             590372914652150013,
@@ -1957,7 +1957,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             8289403597623420010,
             13029343221565205496,
@@ -1972,7 +1972,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             136831164515923804,
             16810986275110407785,
@@ -1987,7 +1987,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1910642465716184360,
             14556943149823291370,
@@ -2002,7 +2002,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             10608222311809381381,
             14179433633019075125,
@@ -2017,7 +2017,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13500111691772391375,
             8512799794009394824,
@@ -2032,7 +2032,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3264908415189251806,
             11422953681466030595,
@@ -2047,7 +2047,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16706641624231704655,
             11664708879297745768,
@@ -2062,7 +2062,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11243754114777387816,
             5838103412275798623,
@@ -2077,7 +2077,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             8308402773642324888,
             3409541566090676351,
@@ -2092,7 +2092,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             708896399396278435,
             1257845322872047028,
@@ -2107,7 +2107,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13180795591816971948,
             15857779886151579403,
@@ -2122,7 +2122,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             8402157611736153321,
             12335186267036144886,
@@ -2137,7 +2137,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             12198605505843418430,
             9756008664939354985,
@@ -2152,7 +2152,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13134707106823702043,
             2843837219609411296,
@@ -2167,7 +2167,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7791804133280658954,
             922078076538637905,
@@ -2182,7 +2182,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6472264319659489411,
             3231213189151302125,
@@ -2197,7 +2197,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6860791923844561081,
             5831092704677644340,
@@ -2212,7 +2212,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             18001610369031558777,
             17091515170629564191,
@@ -2227,7 +2227,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13088353800358089468,
             1745052294860312042,
@@ -2242,7 +2242,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16029426644127340417,
             10184579717973737816,
@@ -2257,7 +2257,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16013672712243861708,
             13790751235038461360,
@@ -2272,7 +2272,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             758531547533047503,
             459183603099826642,
@@ -2287,7 +2287,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1106194410999596065,
             6317913819282829218,
@@ -2302,7 +2302,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16557023692184351851,
             7865680122713837496,
@@ -2317,7 +2317,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9406931071366291336,
             13175103936484489529,
@@ -2332,7 +2332,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9730027592101619160,
             12215034973040072680,
@@ -2347,7 +2347,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6145674211479154129,
             3098015548950002075,
@@ -2362,7 +2362,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13492250709766747546,
             7400045911623455814,
@@ -2377,7 +2377,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             4986082465807994211,
             10353010652298595453,
@@ -2392,7 +2392,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9489223912964735547,
             15104726661184384261,
@@ -2407,7 +2407,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17640957236446203512,
             2210107972092869895,
@@ -2422,7 +2422,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1361370824204395646,
             13483521734955727885,
@@ -2437,7 +2437,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             15438446297514460390,
             17032966975211894336,
@@ -2452,7 +2452,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16745882171464841579,
             10658292892824484473,
@@ -2467,7 +2467,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6229567867847666925,
             1807524163326209062,
@@ -2482,7 +2482,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11714852470340901665,
             3147009520299589153,
@@ -2497,7 +2497,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3786288411850223455,
             1746706807658652980,
@@ -2512,7 +2512,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16580854510585889834,
             11196234461955923989,
@@ -2527,7 +2527,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             2611263139759804988,
             3174734521080511442,
@@ -2542,7 +2542,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16458312103783902567,
             5779962888289717401,
@@ -2557,7 +2557,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             18174940165004999168,
             14966248565481959713,
@@ -2572,7 +2572,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7676759006209912020,
             3294725159977817138,
@@ -2587,7 +2587,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17581641449495038418,
             12730349614658523553,
@@ -2602,7 +2602,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             12274606366406724126,
             15897051182823707203,
@@ -2617,7 +2617,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1480236847444370591,
             12523897909941099590,
@@ -2632,7 +2632,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6368793144266809024,
             761786927526076528,
@@ -2647,7 +2647,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11142599733742018729,
             17201388155953090181,
@@ -2662,7 +2662,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16187072451935530343,
             15048190779630214432,
@@ -2677,7 +2677,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13273030398223281084,
             16101035855993042487,
@@ -2692,7 +2692,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14750467008014031114,
             3508534097219244340,
@@ -2707,7 +2707,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9802963960090844167,
             16479141900475593394,
@@ -2722,7 +2722,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6991715099466909826,
             14725428464397014929,
@@ -2737,7 +2737,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             10859785726629222592,
             1526398368145170403,
@@ -2752,7 +2752,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             4944412574004450784,
             4851430994021934800,
@@ -2767,7 +2767,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             15666046498637727731,
             11181074789572514355,
@@ -2782,7 +2782,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16433811279249904959,
             7086984708921448708,
@@ -2797,7 +2797,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             5648411079012792777,
             4376010857817046739,
@@ -2812,7 +2812,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             12794626968241555664,
             11711491641780648770,
@@ -2827,7 +2827,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17643356679698056295,
             18399428145572557529,
@@ -2842,7 +2842,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11559886251105433454,
             17186606228802779267,
@@ -2857,7 +2857,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11238867163057683299,
             5808077196128614210,
@@ -2872,7 +2872,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17252826193886556840,
             8589832681528040857,
@@ -2887,7 +2887,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             10295476321363210491,
             3625145492656539140,
@@ -2902,7 +2902,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3328392306994323119,
             5259999797723798274,
@@ -2917,7 +2917,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             8495783952081927737,
             1709836487296406932,
@@ -2932,7 +2932,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             15726994596783322683,
             8247866281533054456,
@@ -2947,7 +2947,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             4918459491712695251,
             10120940870911272273,
@@ -2962,7 +2962,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9149953810672039699,
             4622756430478875867,
@@ -2977,7 +2977,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7417282378538254270,
             4383636143421165937,
@@ -2992,7 +2992,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13963470620381389899,
             9101278341108140297,
@@ -3007,7 +3007,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             12526627402056720077,
             588601529408570821,
@@ -3022,7 +3022,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1168189529741924532,
             1018044325913320669,
@@ -3037,7 +3037,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             12116033367663076372,
             3470259911810594241,
@@ -3052,7 +3052,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             5779751893738974761,
             11512153353161513675,
@@ -3067,7 +3067,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             4156397349792154267,
             4603245393324435159,
@@ -3082,7 +3082,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             621488382954208082,
             2646863641801027142,
@@ -3097,7 +3097,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11751015231858051737,
             3170359556645183871,
@@ -3112,7 +3112,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3381784168725619831,
             16360097307464365303,
@@ -3127,7 +3127,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3139213119357725255,
             5797806538769470649,
@@ -3142,7 +3142,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14400209750893056464,
             15777990434865703674,
@@ -3157,7 +3157,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13620606671819440054,
             2293461951157862326,
@@ -3172,7 +3172,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17591521296901105893,
             12404686964748341124,
@@ -3187,7 +3187,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6165893318328860846,
             3229347573809196850,
@@ -3202,7 +3202,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6568104028731200737,
             14778661774954642672,
@@ -3217,7 +3217,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13477531670388832379,
             8489865535122039257,
@@ -3232,7 +3232,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             4967036524536971233,
             7213750927117510670,
@@ -3247,7 +3247,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7819729337853175945,
             1435593715037803404,
@@ -3262,7 +3262,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16781080913845109139,
             7676593103937500093,
@@ -3277,7 +3277,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             15708717873978064824,
             15510848298007970620,
@@ -3292,7 +3292,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             4047326850563393331,
             6177798478851142798,
@@ -3307,7 +3307,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             15736602844985500543,
             6723285059332691415,
@@ -3322,7 +3322,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13965462113982013795,
             14915150977981408670,
@@ -3337,7 +3337,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             5371716470121092036,
             9314699551728066567,
@@ -3352,7 +3352,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             739971396204429101,
             6448621088734913743,
@@ -3367,7 +3367,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             10901702809044943843,
             6094885859877862475,
@@ -3382,7 +3382,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             2757526926961026714,
             7191459980271489595,
@@ -3397,7 +3397,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             10651639001692414851,
             5400692718993021708,
@@ -3412,7 +3412,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17689552409800180999,
             1265010834569091099,
@@ -3427,7 +3427,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3496901205178417649,
             425858392712039442,
@@ -3442,7 +3442,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6860255188838407470,
             802214380535420620,
@@ -3457,7 +3457,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14933192035863659860,
             5525349372374584463,
@@ -3472,7 +3472,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7009928818298858389,
             17625415588366038364,
@@ -3487,7 +3487,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7110979356275275608,
             9441718658416534483,
@@ -3502,7 +3502,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16129023590172024790,
             17643423826668730069,
@@ -3517,7 +3517,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16973574915745230104,
             9706577183604242436,
@@ -3532,7 +3532,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             4125942086077854170,
             1604649793631231444,
@@ -3547,7 +3547,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9510136727882449185,
             17863362470608308729,
@@ -3562,7 +3562,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17287139846538294746,
             16686695244766760179,
@@ -3577,7 +3577,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             4789354227815325805,
             9206709033499752385,
@@ -3592,7 +3592,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9788434229196749584,
             10489723112571215242,
@@ -3607,7 +3607,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             18214632729013051386,
             8997063168444278621,
@@ -3622,7 +3622,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16802858842074144581,
             10342221802107361991,
@@ -3637,7 +3637,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             2626467900455692681,
             12297954090690963465,
@@ -3652,7 +3652,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11426340209947729679,
             10988295194895161098,
@@ -3667,7 +3667,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             18082288706437783685,
             2553173234217236118,
@@ -3682,7 +3682,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             10899143524327592376,
             15992403363206066270,
@@ -3697,7 +3697,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3788958514657322496,
             1720267394626859242,
@@ -3712,7 +3712,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             8314179267094922057,
             17345653539452352342,
@@ -3727,7 +3727,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             253204653997020391,
             13634849423589072893,
@@ -3742,7 +3742,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6946555333959605500,
             17573739714520887829,
@@ -3757,7 +3757,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9916850050137652701,
             14048980784611428891,
@@ -3772,7 +3772,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16491878934996302286,
             12382025591154462459,
@@ -3787,7 +3787,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6463962446053846451,
             14430568257409928677,
@@ -3802,7 +3802,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             15831341733893438986,
             8883505792511323749,
@@ -3817,7 +3817,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16698091693130522299,
             12107933722389162588,
@@ -3832,7 +3832,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1203723169299412240,
             18195981508842736832,
@@ -3847,7 +3847,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16206597911164544875,
             8940610334877524311,
@@ -3862,7 +3862,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7022228567775850879,
             10329258034226928552,
@@ -3877,7 +3877,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11243440153023765290,
             1789876198932802503,
@@ -3892,7 +3892,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14838443063773320160,
             16710252711599145335,
@@ -3907,7 +3907,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1322752058299681290,
             7923757124884113552,
@@ -3922,7 +3922,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             18026144224540159195,
             6245137875232955419,
@@ -3937,7 +3937,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7174338020030566009,
             14570153911939996782,
@@ -3952,7 +3952,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16672246377086627268,
             6353000081561509174,
@@ -3967,7 +3967,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             12362868579703983155,
             15821352995118212048,
@@ -3982,7 +3982,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             12720555563177514859,
             17486604138575998684,
@@ -3997,7 +3997,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11616534159956634504,
             16722814574794513320,
@@ -4012,7 +4012,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17404412181423674314,
             7966576523026450310,
@@ -4027,7 +4027,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             731886730405166556,
             9896381575888562602,
@@ -4042,7 +4042,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             5209961393719129219,
             5284278488239799570,
@@ -4057,7 +4057,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17590842741580820831,
             15324767428705036849,
@@ -4072,7 +4072,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             12084458700134416126,
             7844111579283711962,
@@ -4087,7 +4087,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3227480538530392332,
             4439292535456864960,
@@ -4102,7 +4102,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11236398728524880686,
             10104841605073712848,
@@ -4117,7 +4117,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             4774145490411147762,
             13127903127999769550,
@@ -4132,7 +4132,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             5673069023486392075,
             12864332027556200040,
@@ -4147,7 +4147,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             5135017788578227063,
             323506796849334345,
@@ -4162,7 +4162,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             18224124866030251396,
             453977930038507609,
@@ -4177,7 +4177,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16772603845758566192,
             10921450701526971858,
@@ -4192,7 +4192,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7339749078242119467,
             7957137267824257723,
@@ -4207,7 +4207,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             2839515777038704446,
             16001961253316166312,
@@ -4222,7 +4222,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             4077024628754917778,
             14427355612785039270,
@@ -4237,7 +4237,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17028219446000709338,
             17567158562455857051,
@@ -4252,7 +4252,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9236878685047878759,
             18007037676600022675,
@@ -4267,7 +4267,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7887482583213929561,
             3208427846802767765,
@@ -4282,7 +4282,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             12422701497637169255,
             1992196375358266211,
@@ -4297,7 +4297,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             5607511041427582434,
             1348834769651990107,
@@ -4312,7 +4312,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             2756905179141425686,
             3133335710504403357,
@@ -4327,7 +4327,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9307719978454287270,
             17041593009235267904,
@@ -4342,7 +4342,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             10307994582074671920,
             4445286378781641328,
@@ -4357,7 +4357,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11078006341477042174,
             6762098204481222304,
@@ -4372,7 +4372,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11786256235238224893,
             11645169027648556650,
@@ -4387,7 +4387,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17366578917858484605,
             1717770967725674280,
@@ -4402,7 +4402,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             8520772710025538550,
             10924699020812479322,
@@ -4417,7 +4417,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3624827355380207862,
             15921695405753811117,
@@ -4432,7 +4432,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             4256184226718774420,
             6852511805210056558,
@@ -4447,7 +4447,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17723322183891255297,
             16410831451288443106,
@@ -4462,7 +4462,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1802438404742958368,
             3664285059540291052,
@@ -4477,7 +4477,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             8565651758217688881,
             13423481242862215416,
@@ -4492,7 +4492,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6732836224389524156,
             4518006703994927970,
@@ -4507,7 +4507,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             246532098857264882,
             17998261805825378973,
@@ -4522,7 +4522,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9881433614937340882,
             3380725499905132571,
@@ -4537,7 +4537,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11373081815259512498,
             13906161232648126915,
@@ -4552,7 +4552,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6851762306891818372,
             9412021843550090283,
@@ -4567,7 +4567,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14976511855781141063,
             4427835946581924526,
@@ -4582,7 +4582,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11075768572886603007,
             621316485811508008,
@@ -4597,7 +4597,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             582739359213836381,
             11644144213261202213,
@@ -4612,7 +4612,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6171641737699989862,
             6902452568648477918,
@@ -4627,7 +4627,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             4795246998181201386,
             54023997139942349,
@@ -4642,7 +4642,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14676651858140718876,
             13122925373941521545,
@@ -4657,7 +4657,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11644070534242586731,
             16322625832910066246,
@@ -4672,7 +4672,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             12022995556337256464,
             2344059118455704353,
@@ -4687,7 +4687,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7647288356084509710,
             12463060049845584638,
@@ -4702,7 +4702,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6565496123231237593,
             4963005566598223231,
@@ -4717,7 +4717,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             10823870676385615215,
             5471510065195732312,
@@ -4732,7 +4732,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17822248695004747325,
             7475761931252657159,
@@ -4747,7 +4747,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17805343612507515319,
             13938871879194511315,
@@ -4762,7 +4762,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11038388873072048708,
             17731078118464411358,
@@ -4777,7 +4777,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             12320418356180694622,
             14640626387171276544,
@@ -4792,7 +4792,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9021438618221074345,
             17785103655538609993,
@@ -4807,7 +4807,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             5456760287045512662,
             4509341029414279571,
@@ -4822,7 +4822,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3298361759933006316,
             6104830304433525377,
@@ -4837,7 +4837,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1205656894151720335,
             10106125084091068839,
@@ -4852,7 +4852,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17783008139017695518,
             11096971405888362203,
@@ -4867,7 +4867,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16586934936214300964,
             2564626492232232266,
@@ -4882,7 +4882,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16628687685975957928,
             9802295565032245629,
@@ -4897,7 +4897,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             15778547920966600169,
             11339589343991848282,
@@ -4912,7 +4912,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             5434672280224499242,
             18432141254108275269,
@@ -4927,7 +4927,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             15032323673524560838,
             11447728440406948191,
@@ -4942,7 +4942,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             4912379664905777175,
             10906069331150484321,
@@ -4957,7 +4957,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             12724880653151393619,
             13990680356177537723,
@@ -4972,7 +4972,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3731861941306416557,
             17624492170927776915,
@@ -4987,7 +4987,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17731892157012034600,
             6002071936853169678,
@@ -5002,7 +5002,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17729702459160037401,
             10994506068399459370,
@@ -5017,7 +5017,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14177808238652911318,
             11274309249612841525,
@@ -5032,7 +5032,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13733296087414963921,
             17278797162061312231,
@@ -5047,7 +5047,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             849644728839957297,
             13700735315594159606,
@@ -5062,7 +5062,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13084785013910048594,
             7196594000996252647,
@@ -5077,7 +5077,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             8734715481801540655,
             339040080379589117,
@@ -5092,7 +5092,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9400721159317018595,
             4077070414584804646,
@@ -5107,7 +5107,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1775046804002609329,
             2948459924481175894,
@@ -5122,7 +5122,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             4465580985391627182,
             4793424103564463020,
@@ -5137,7 +5137,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14432122325493150947,
             16058410332649200089,
@@ -5152,7 +5152,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3987749099002836191,
             17865934125376497687,
@@ -5167,7 +5167,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9655658583435451129,
             13347384847190474959,
@@ -5182,7 +5182,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             5119966680142736257,
             1703409068592521907,
@@ -5197,7 +5197,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1875970481417459887,
             2793034784560015157,
@@ -5212,7 +5212,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3158471564009805246,
             1793123099847760108,
@@ -5227,7 +5227,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17138476595150605441,
             7209773032311799246,
@@ -5242,7 +5242,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             10685639500742306044,
             14485776635116333771,
@@ -5257,7 +5257,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6431243980832365496,
             4478532805743836424,
@@ -5272,7 +5272,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1089831364442904897,
             14889791584836681870,
@@ -5287,7 +5287,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             2517157007851737609,
             10558694907419379688,
@@ -5302,7 +5302,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             15876791795417774538,
             7444448127266305819,
@@ -5317,7 +5317,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9172778933809682090,
             1840315808323446401,
@@ -5332,7 +5332,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             8426305303737382682,
             18130077054010002837,
@@ -5347,7 +5347,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17657210995732179022,
             9446344136936120727,
@@ -5362,7 +5362,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3298492280922146026,
             6007210937459832607,
@@ -5377,7 +5377,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14304935148967812431,
             14980960725657775481,
@@ -5392,7 +5392,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             8501765741421691365,
             503706688947025310,
@@ -5407,7 +5407,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6260024531384898710,
             10100954950382021859,
@@ -5422,7 +5422,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             5867383977628735594,
             1776720431392393188,
@@ -5437,7 +5437,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1043140102377452363,
             639378427116434914,
@@ -5452,7 +5452,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13175826941427594249,
             8880895657559511844,
@@ -5467,7 +5467,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             5218651634505424441,
             4159611364261109291,
@@ -5482,7 +5482,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3657564013567248985,
             7019260972203769853,
@@ -5497,7 +5497,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             8572351362020366978,
             7930722276802902015,
@@ -5512,7 +5512,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             344819309305349969,
             2968414457405683133,
@@ -5527,7 +5527,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6318007045377106819,
             1822062885819396552,
@@ -5542,7 +5542,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13048786572982944352,
             8059256127282015542,
@@ -5557,7 +5557,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11665010446160766531,
             4955445418069469624,
@@ -5572,7 +5572,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11976716929757721004,
             9223082867989329343,
@@ -5587,7 +5587,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6520656434365733171,
             3244180940908962275,
@@ -5602,7 +5602,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             2361093931112906926,
             6965576966431782233,
@@ -5617,7 +5617,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             18015483733537880655,
             889118439400348035,
@@ -5632,7 +5632,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9424694683887606054,
             3097831961310514033,
@@ -5647,7 +5647,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7655216619403680101,
             4501396528660459108,
@@ -5662,7 +5662,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             15266375863156785795,
             8949703910419710657,
@@ -5677,7 +5677,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3723701767963263224,
             12629222953006573283,
@@ -5692,7 +5692,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             5478610592844872968,
             13320033584590754934,
@@ -5707,7 +5707,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9910122334161865148,
             5350913141075891689,
@@ -5722,7 +5722,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13320858219802612547,
             14207020933257739477,
@@ -5737,7 +5737,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13727702362156122665,
             70961646111312120,
@@ -5752,7 +5752,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17061025189398091512,
             886113663711705943,
@@ -5767,7 +5767,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             10910235695891978737,
             7205498351228331900,
@@ -5782,7 +5782,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1518817506498892633,
             269625989053359877,
@@ -5797,7 +5797,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1920287456720821076,
             13791086407489574349,
@@ -5812,7 +5812,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6152554412144059804,
             13145693863509861451,
@@ -5827,7 +5827,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3238325442093757130,
             12215522436588032834,
@@ -5842,7 +5842,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14132007411735974706,
             5224591249512401918,
@@ -5857,7 +5857,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6257073345714734150,
             14582967507676642190,
@@ -5872,7 +5872,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             12984836281563856641,
             2428882102286591468,
@@ -5887,7 +5887,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11817122520451988338,
             15745810523446209801,
@@ -5902,7 +5902,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13891623794390714632,
             8845817209352371918,
@@ -5917,7 +5917,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16676586247543241699,
             6686387192985942199,
@@ -5932,7 +5932,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             2915020090602733338,
             9957713024428996078,
@@ -5947,7 +5947,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             15277177264453420487,
             12828768231000461935,
@@ -5962,7 +5962,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1390500508310211942,
             6306080318041758169,
@@ -5977,7 +5977,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             8815851020211401807,
             2478721697004604254,
@@ -5992,7 +5992,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             15181377015370884435,
             1508136496340538472,
@@ -6007,7 +6007,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7175040633539505687,
             8580429300992070866,
@@ -6022,7 +6022,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             5854298671654981850,
             2603050858391981342,
@@ -6037,7 +6037,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             15609204914361644222,
             8348522517925583793,
@@ -6052,7 +6052,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14911086081754423478,
             15135502186392426803,
@@ -6067,7 +6067,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11003392236279749115,
             3465522475331769750,
@@ -6082,7 +6082,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17705783402503246007,
             277577571039887952,
@@ -6097,7 +6097,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             18229172836492089006,
             9252302760144191960,
@@ -6112,7 +6112,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             4275944215705565304,
             12606562696433932395,
@@ -6127,7 +6127,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14338917801275937038,
             15487410149956537392,
@@ -6142,7 +6142,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             2898309675232378528,
             11545032280876770700,
@@ -6157,7 +6157,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1080805853324151795,
             7220702879171694034,
@@ -6172,7 +6172,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13746603949095546892,
             666460957140740539,
@@ -6187,7 +6187,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3970579964179834641,
             7190676784543543934,
@@ -6202,7 +6202,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             36887440463561452,
             5342615970722986822,
@@ -6217,7 +6217,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1858560050681586192,
             7931404410831752771,
@@ -6232,7 +6232,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             15385291907438445662,
             3882360028725811247,
@@ -6247,7 +6247,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             79717126109356460,
             507209053559872093,
@@ -6262,7 +6262,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1683641258133765407,
             6977319476115888895,
@@ -6277,7 +6277,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1134677397300590381,
             4193515887447484402,
@@ -6292,7 +6292,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             15258438116404590173,
             18038506997713490616,
@@ -6307,7 +6307,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1258312071003118935,
             14438651943721032142,
@@ -6322,7 +6322,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             8968763058375768517,
             16170327167732022696,
@@ -6337,7 +6337,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3247626786576125811,
             2400662828492243965,
@@ -6352,7 +6352,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             5247731466961314226,
             9831644786339250281,
@@ -6367,7 +6367,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             5112316221780401497,
             5700258338997971089,
@@ -6382,7 +6382,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             645787320905593903,
             14778238478662711939,
@@ -6397,7 +6397,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3507049242943428735,
             13066578561221990831,
@@ -6412,7 +6412,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             15106292802837036795,
             9012922041233019983,
@@ -6427,7 +6427,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             4018150707202124406,
             8355229729033988138,
@@ -6442,7 +6442,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14440818837803235285,
             11847614200046646737,
@@ -6457,7 +6457,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7080945026909207699,
             7689410790278185128,
@@ -6472,7 +6472,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             15848854110303821105,
             4536095595098585980,
@@ -6487,7 +6487,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             11553190330156661934,
             5757315501022944108,
@@ -6502,7 +6502,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6478559569395345536,
             9974908348566476203,
@@ -6517,7 +6517,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14470245552138802686,
             5755488868957240494,
@@ -6532,7 +6532,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             8243785709504524403,
             474185816568567380,
@@ -6547,7 +6547,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1235335442306023901,
             11111755556137315851,
@@ -6562,7 +6562,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9666926929075817550,
             18120737219285579138,
@@ -6577,7 +6577,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1574162774401534574,
             2708736407639521201,
@@ -6592,7 +6592,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             12988025649359556111,
             5009026958914357564,
@@ -6607,7 +6607,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             12301172003794774599,
             3967119023043419558,
@@ -6622,7 +6622,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             518146898067292296,
             2248074692387169688,
@@ -6637,7 +6637,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14247255255253445150,
             3820836798735960073,
@@ -6652,7 +6652,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14585982445005228090,
             198672071629538099,
@@ -6667,7 +6667,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7817837166794619643,
             9315110057369785406,
@@ -6682,7 +6682,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7758728640422406128,
             796521536524490121,
@@ -6697,7 +6697,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7430622010620235258,
             4970198750964407489,
@@ -6712,7 +6712,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             18437019180653662889,
             13392523598446862518,
@@ -6727,7 +6727,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             5510099258841671003,
             17261268512434063429,
@@ -6742,7 +6742,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             4227748965603254548,
             9693028997523349187,
@@ -6757,7 +6757,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             12103307310608976272,
             4150634247107719141,
@@ -6772,7 +6772,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             10403441704667581873,
             10574167203947908829,
@@ -6787,7 +6787,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6353887283610988092,
             7056938630138488587,
@@ -6802,7 +6802,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17778342123713763364,
             4255278387813246262,
@@ -6817,7 +6817,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             3641395519200054831,
             1072966581104001068,
@@ -6832,7 +6832,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14075321674933148384,
             2501246698272762168,
@@ -6847,7 +6847,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17613712260568001466,
             4198129525377111004,
@@ -6862,7 +6862,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             12258456446514062244,
             14387402866623529465,
@@ -6877,7 +6877,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             10769177638537811003,
             16780080528114699220,
@@ -6892,7 +6892,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13351129655076507677,
             4277463485099678805,
@@ -6907,7 +6907,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             279709663008999028,
             12507689957030925382,
@@ -6922,7 +6922,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1897827064850209811,
             9643727680150094447,
@@ -6937,7 +6937,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6065693026642363140,
             3160951849269624578,
@@ -6952,7 +6952,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             12964661786638403837,
             9575711964941225100,
@@ -6967,7 +6967,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7766183031462565625,
             9004345570312347839,
@@ -6982,7 +6982,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7930778217763891336,
             18423157633692957772,
@@ -6997,7 +6997,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             4141506869309552433,
             6364454242204334599,
@@ -7012,7 +7012,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             15660983250402598548,
             10402484439329412130,
@@ -7027,7 +7027,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14710878511359079919,
             8353720723329861388,
@@ -7042,7 +7042,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1900031311401103699,
             13326259718269156386,
@@ -7057,7 +7057,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1670376543524458695,
             11419498626399387314,
@@ -7072,7 +7072,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             934121626408230946,
             7896869399995619568,
@@ -7087,7 +7087,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1416450438709464612,
             67940503068777401,
@@ -7102,7 +7102,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             5636760667714289145,
             1373429219795553308,
@@ -7117,7 +7117,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             8409150197086307097,
             16931944160884182664,
@@ -7132,7 +7132,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14185947217949825701,
             5010342401050414791,
@@ -7147,7 +7147,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             10970160076366329758,
             2916135496588817368,
@@ -7162,7 +7162,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9455456404606643879,
             12931288204009585322,
@@ -7177,7 +7177,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13258844156362517711,
             628385690168985600,
@@ -7192,7 +7192,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13025219255990344851,
             17316223664915053281,
@@ -7207,7 +7207,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             12154577045664408983,
             14363405383898262225,
@@ -7222,7 +7222,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16592450971748357861,
             10021360702098368024,
@@ -7237,7 +7237,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16126748563067231745,
             12528732246634104929,
@@ -7252,7 +7252,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9380857104510392806,
             5302565390090361450,
@@ -7267,7 +7267,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             8617586357479591341,
             1250374355168217814,
@@ -7282,7 +7282,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9565464517208522714,
             1339384034684243714,
@@ -7297,7 +7297,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             18180460886918598509,
             3946029057202664081,
@@ -7312,7 +7312,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             16362775868834879509,
             11901331990923004907,
@@ -7327,7 +7327,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9257879706626510681,
             17453559082046096352,
@@ -7342,7 +7342,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9027991911867520026,
             14714909264331641706,
@@ -7357,7 +7357,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9955623072303337894,
             14028382008395831053,
@@ -7372,7 +7372,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             10400472064756933500,
             691824391024966168,
@@ -7387,7 +7387,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             17636946168820419227,
             16494412483753172709,
@@ -7402,7 +7402,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             9155324594709292315,
             6395060803422329026,
@@ -7417,7 +7417,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             2238515610254432963,
             16739951160545853158,
@@ -7432,7 +7432,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             10641866985761655145,
             12293552661847462729,
@@ -7447,7 +7447,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14118903182191052648,
             698544334000708965,
@@ -7462,7 +7462,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             15415085803115572098,
             2766850601065928800,
@@ -7477,7 +7477,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             814619082844308353,
             10160861292661440470,
@@ -7492,7 +7492,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13454376011737206491,
             5064566368613728776,
@@ -7507,7 +7507,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             13000080645585133337,
             9541286594793063870,
@@ -7522,7 +7522,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             15450335754366174545,
             15828637278204507088,
@@ -7537,7 +7537,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             7091134114958095952,
             8641253707668174298,
@@ -7552,7 +7552,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             1145636535101238356,
             10664803185694787051,
@@ -7567,7 +7567,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             14807655417810256081,
             263464501051676032,
@@ -7582,7 +7582,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             6850712713867447272,
             7951893333866029523,
@@ -7597,7 +7597,7 @@ pub const CONSTANT_POINTS: [EcPoint; 506] = [
         ]),
         infinity: false,
     },
-    EcPoint {
+    AffinePoint {
         x: FieldElement::from_mont([
             18186352353606695923,
             4132509120571385051,

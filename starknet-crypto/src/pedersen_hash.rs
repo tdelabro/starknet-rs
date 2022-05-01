@@ -1,10 +1,10 @@
-use crate::{ec_point::EcPoint, pedersen_params::CONSTANT_POINTS, FieldElement};
+use crate::{ec_point::AffinePoint, pedersen_params::CONSTANT_POINTS, FieldElement};
 
-const SHIFT_POINT: EcPoint = CONSTANT_POINTS[0];
-const PEDERSEN_P0: EcPoint = CONSTANT_POINTS[2];
-const PEDERSEN_P1: EcPoint = CONSTANT_POINTS[250];
-const PEDERSEN_P2: EcPoint = CONSTANT_POINTS[254];
-const PEDERSEN_P3: EcPoint = CONSTANT_POINTS[502];
+const SHIFT_POINT: AffinePoint = CONSTANT_POINTS[0];
+const PEDERSEN_P0: AffinePoint = CONSTANT_POINTS[2];
+const PEDERSEN_P1: AffinePoint = CONSTANT_POINTS[250];
+const PEDERSEN_P2: AffinePoint = CONSTANT_POINTS[254];
+const PEDERSEN_P3: AffinePoint = CONSTANT_POINTS[502];
 
 /// Computes the Starkware version of the Pedersen hash of x and y. All inputs are little-endian.
 ///
