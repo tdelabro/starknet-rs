@@ -65,7 +65,7 @@ impl From<&ProjectivePoint> for AffinePoint {
     }
 }
 
-impl std::ops::Add<&AffinePoint> for &AffinePoint {
+impl crate::ops::Add<&AffinePoint> for &AffinePoint {
     type Output = AffinePoint;
 
     fn add(self, rhs: &AffinePoint) -> Self::Output {
@@ -75,7 +75,7 @@ impl std::ops::Add<&AffinePoint> for &AffinePoint {
     }
 }
 
-impl std::ops::AddAssign<&AffinePoint> for AffinePoint {
+impl crate::ops::AddAssign<&AffinePoint> for AffinePoint {
     fn add_assign(&mut self, rhs: &AffinePoint) {
         if rhs.infinity {
             return;
@@ -104,7 +104,7 @@ impl std::ops::AddAssign<&AffinePoint> for AffinePoint {
     }
 }
 
-impl std::ops::Sub<&AffinePoint> for &AffinePoint {
+impl crate::ops::Sub<&AffinePoint> for &AffinePoint {
     type Output = AffinePoint;
 
     fn sub(self, rhs: &AffinePoint) -> Self::Output {
@@ -114,7 +114,7 @@ impl std::ops::Sub<&AffinePoint> for &AffinePoint {
     }
 }
 
-impl std::ops::SubAssign<&AffinePoint> for AffinePoint {
+impl crate::ops::SubAssign<&AffinePoint> for AffinePoint {
     fn sub_assign(&mut self, rhs: &AffinePoint) {
         *self += &AffinePoint {
             x: rhs.x,
@@ -124,7 +124,7 @@ impl std::ops::SubAssign<&AffinePoint> for AffinePoint {
     }
 }
 
-impl std::ops::Mul<&[bool]> for &AffinePoint {
+impl crate::ops::Mul<&[bool]> for &AffinePoint {
     type Output = AffinePoint;
 
     #[allow(clippy::suspicious_arithmetic_impl)]
@@ -189,7 +189,7 @@ impl From<&AffinePoint> for ProjectivePoint {
     }
 }
 
-impl std::ops::AddAssign<&AffinePoint> for ProjectivePoint {
+impl crate::ops::AddAssign<&AffinePoint> for ProjectivePoint {
     fn add_assign(&mut self, rhs: &AffinePoint) {
         if rhs.infinity {
             return;
@@ -233,7 +233,7 @@ impl std::ops::AddAssign<&AffinePoint> for ProjectivePoint {
     }
 }
 
-impl std::ops::AddAssign<&ProjectivePoint> for ProjectivePoint {
+impl crate::ops::AddAssign<&ProjectivePoint> for ProjectivePoint {
     fn add_assign(&mut self, rhs: &ProjectivePoint) {
         if rhs.infinity {
             return;
@@ -273,7 +273,7 @@ impl std::ops::AddAssign<&ProjectivePoint> for ProjectivePoint {
     }
 }
 
-impl std::ops::Mul<&[bool]> for &ProjectivePoint {
+impl crate::ops::Mul<&[bool]> for &ProjectivePoint {
     type Output = ProjectivePoint;
 
     #[allow(clippy::suspicious_arithmetic_impl)]

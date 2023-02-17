@@ -18,9 +18,9 @@ proc-macro = true
 [dependencies]
 starknet-curve = { version = "0.1.0", path = "../starknet-curve", default-features = false }
 starknet-ff = { version = "0.2.0", path = "../starknet-ff", default-features = false }
-syn = {version = "1.0.96", default-features = false}
+syn = { version = "1.0.96", default-features = false }
 
 [features]
 default = ["std"]
-std = []
+std = ["starknet-ff/std", "starknet-curve/alloc"]
 alloc = ["starknet-ff/alloc", "starknet-curve/alloc"]

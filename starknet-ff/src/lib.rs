@@ -1,19 +1,22 @@
-#![cfg_attr(any(target_arch = "wasm32", not(feature = "std")), no_std)]
+#![cfg_attr(not(feature = "std"), no_std)]
 #![allow(clippy::comparison_chain)]
+
+#[cfg(feature = "std")]
+include!("./with_std.rs");
+
+#[cfg(not(feature = "std"))]
+include!("./without_std.rs");
+
+#[cfg(all(not(feature = "std"), feature = "alloc"))]
+include!("./with_alloc.rs");
+
+use self::str::FromStr;
+
+use self::string::{String, ToString};
 
 use fr::FrParameters;
 
-#[cfg(feature = "alloc")]
-extern crate alloc;
-#[cfg(feature = "alloc")]
-use alloc::{format, string::String};
-
 use ark_ff::{fields::Fp256, BigInteger, BigInteger256, Field, PrimeField, SquareRootField};
-use core::{
-    fmt::{self, Debug, Display, LowerHex, UpperHex},
-    ops,
-    str::{self, FromStr},
-};
 use crypto_bigint::{CheckedAdd, CheckedMul, Zero, U256};
 use serde::{Deserialize, Serialize};
 
@@ -350,7 +353,7 @@ impl ops::BitOr<FieldElement> for FieldElement {
     }
 }
 
-impl Debug for FieldElement {
+impl fmt::Debug for FieldElement {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("FieldElement")
             .field("inner", &InnerDebug(self))
@@ -358,7 +361,7 @@ impl Debug for FieldElement {
     }
 }
 
-impl Display for FieldElement {
+impl fmt::Display for FieldElement {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         // Ported from:
         //   https://github.com/paritytech/parity-common/blob/b37d0b312d39fa47c61c4430b30ca87d90e45a08/uint/src/uint.rs#L1650
@@ -394,7 +397,7 @@ impl Display for FieldElement {
     }
 }
 
-impl LowerHex for FieldElement {
+impl crate::fmt::LowerHex for FieldElement {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let repr: U256 = self.into();
 
@@ -424,7 +427,7 @@ impl LowerHex for FieldElement {
     }
 }
 
-impl UpperHex for FieldElement {
+impl crate::fmt::UpperHex for FieldElement {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let repr: U256 = self.into();
 
@@ -459,7 +462,7 @@ impl Serialize for FieldElement {
     where
         S: serde::Serializer,
     {
-        serializer.serialize_str(&format!("{self}"))
+        serializer.serialize_str(&ToString::to_string(&self))
     }
 }
 
@@ -517,7 +520,7 @@ impl From<usize> for FieldElement {
     }
 }
 
-impl FromStr for FieldElement {
+impl crate::str::FromStr for FieldElement {
     type Err = FromStrError;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
@@ -595,7 +598,7 @@ impl From<&FieldElement> for U256 {
     }
 }
 
-impl<'a> Debug for InnerDebug<'a> {
+impl<'a> fmt::Debug for InnerDebug<'a> {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{:#064x}", self.0)
     }
