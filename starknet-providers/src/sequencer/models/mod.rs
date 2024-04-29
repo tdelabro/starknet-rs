@@ -14,7 +14,7 @@ mod transaction;
 pub use transaction::{
     DeclareTransaction, DeployAccountTransaction, DeployTransaction, EntryPointType,
     InvokeFunctionTransaction, L1HandlerTransaction, TransactionFailureReason, TransactionInfo,
-    TransactionStatusInfo, TransactionType,
+    TransactionStatusInfo, TransactionType, ResourceBoundsMapping, DataAvailabilityMode,
 };
 
 mod transaction_receipt;
