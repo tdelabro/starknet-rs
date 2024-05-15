@@ -12,9 +12,9 @@ pub use block::{Block, BlockId, BlockStatus};
 
 mod transaction;
 pub use transaction::{
-    DeclareTransaction, DeployAccountTransaction, DeployTransaction, EntryPointType,
-    InvokeFunctionTransaction, L1HandlerTransaction, TransactionFailureReason, TransactionInfo,
-    TransactionStatusInfo, TransactionType, ResourceBoundsMapping, DataAvailabilityMode,
+    DataAvailabilityMode, DeclareTransaction, DeployAccountTransaction, DeployTransaction,
+    EntryPointType, InvokeFunctionTransaction, L1HandlerTransaction, ResourceBoundsMapping,
+    TransactionFailureReason, TransactionInfo, TransactionStatusInfo, TransactionType,
 };
 
 mod transaction_receipt;
@@ -47,6 +47,7 @@ pub use contract::{CompressedLegacyContractClass, DeployedClass};
 
 pub mod state_update;
 pub use state_update::StateUpdate;
+pub use state_update::StateUpdateWithBlock;
 
 pub mod trace;
 pub use trace::{BlockTraces, TransactionTrace};

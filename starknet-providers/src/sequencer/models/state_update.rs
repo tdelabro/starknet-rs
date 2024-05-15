@@ -3,6 +3,8 @@ use serde_with::serde_as;
 use starknet_core::{serde::unsigned_field_element::UfeHex, types::FieldElement};
 use std::collections::HashMap;
 
+use super::Block;
+
 #[serde_as]
 #[derive(Debug, Deserialize)]
 #[cfg_attr(feature = "no_unknown_fields", serde(deny_unknown_fields))]
@@ -14,6 +16,14 @@ pub struct StateUpdate {
     #[serde_as(as = "UfeHex")]
     pub old_root: FieldElement,
     pub state_diff: StateDiff,
+}
+
+#[serde_as]
+#[derive(Debug, Deserialize)]
+#[cfg_attr(feature = "no_unknown_fields", serde(deny_unknown_fields))]
+pub struct StateUpdateWithBlock {
+    pub state_update: StateUpdate,
+    pub block: Block,
 }
 
 #[serde_as]
