@@ -227,6 +227,13 @@ impl<'f, F> AccountDeploymentV3<'f, F> {
         }
     }
 
+    pub fn nonce(self, nonce: FieldElement) -> Self {
+        Self {
+            nonce: Some(nonce),
+            ..self
+        }
+    }
+
     pub fn gas(self, gas: u64) -> Self {
         Self {
             gas: Some(gas),
@@ -526,15 +533,40 @@ where
         // Resolves fee settings
         let (gas, gas_price) = match (self.gas, self.gas_price) {
             (Some(gas), Some(gas_price)) => (gas, gas_price),
-            // We have to perform fee estimation as long as it's not fully specified
+            (Some(gas), _) => {
+                // When `gas` is specified, we only need the L1 gas price in FRI. By specifying a
+                // a `gas` value, the user might be trying to avoid a full fee estimation (e.g.
+                // flaky dependencies), so it's in appropriate to call `estimate_fee` here.
+
+                // This is the lightest-weight block we can get
+                let block_l1_gas_price = self
+                    .factory
+                    .provider()
+                    .get_block_with_tx_hashes(self.factory.block_id())
+                    .await
+                    .map_err(AccountFactoryError::Provider)?
+                    .l1_gas_price()
+                    .price_in_fri;
+
+                let gas_price = (((TryInto::<u64>::try_into(block_l1_gas_price)
+                    .map_err(|_| AccountFactoryError::FeeOutOfRange)?)
+                    as f64)
+                    * self.gas_price_estimate_multiplier) as u128;
+
+                (gas, gas_price)
+            }
+            // We have to perform fee estimation as long as gas is not specified
             _ => {
                 let fee_estimate = self.estimate_fee_with_nonce(nonce).await?;
 
                 let gas = match self.gas {
                     Some(gas) => gas,
                     None => {
-                        (((TryInto::<u64>::try_into(fee_estimate.gas_consumed)
-                            .map_err(|_| AccountFactoryError::FeeOutOfRange)?)
+                        (((TryInto::<u64>::try_into(
+                            (fee_estimate.overall_fee + fee_estimate.gas_price - FieldElement::ONE)
+                                .floor_div(fee_estimate.gas_price),
+                        )
+                        .map_err(|_| AccountFactoryError::FeeOutOfRange)?)
                             as f64)
                             * self.gas_estimate_multiplier) as u64
                     }
