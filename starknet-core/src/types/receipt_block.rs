@@ -59,8 +59,8 @@ impl Serialize for ReceiptBlock {
         #[derive(Serialize)]
         #[serde_as]
         struct Raw<'a> {
-            #[serde_as(as = "Option<UfeHex>")]
             #[serde(skip_serializing_if = "Option::is_none")]
+            #[serde_as(as = "Option<UfeHex>")]
             block_hash: Option<&'a FieldElement>,
             #[serde(skip_serializing_if = "Option::is_none")]
             block_number: Option<&'a u64>,
