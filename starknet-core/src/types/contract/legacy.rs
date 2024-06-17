@@ -5,7 +5,7 @@ use crate::{
     serde::{num_hex::u64 as u64_hex, unsigned_field_element::UfeHex},
     types::{
         contract::{ComputeClassHashError, JsonError},
-        FieldElement, FunctionStateMutability, LegacyContractAbiEntry, LegacyContractEntryPoint,
+        Felt, FunctionStateMutability, LegacyContractAbiEntry, LegacyContractEntryPoint,
         LegacyEntryPointsByType, LegacyEventAbiEntry, LegacyEventAbiType, LegacyFunctionAbiEntry,
         LegacyFunctionAbiType, LegacyStructAbiEntry, LegacyStructAbiType, LegacyStructMember,
         LegacyTypedParameter,
@@ -24,7 +24,7 @@ use crate::types::{contract::CompressProgramError, CompressedLegacyContractClass
 #[cfg(feature = "std")]
 use flate2::{write::GzEncoder, Compression};
 
-const API_VERSION: FieldElement = FieldElement::ZERO;
+const API_VERSION: Felt = Felt::ZERO;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[cfg_attr(feature = "no_unknown_fields", serde(deny_unknown_fields))]
@@ -56,12 +56,12 @@ pub struct LegacyProgram {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub compiler_version: Option<String>,
     #[serde_as(as = "Vec<UfeHex>")]
-    pub data: Vec<FieldElement>,
+    pub data: Vec<Felt>,
     pub debug_info: Option<LegacyDebugInfo>,
     pub hints: BTreeMap<u64, Vec<LegacyHint>>,
     pub identifiers: BTreeMap<String, LegacyIdentifier>,
     pub main_scope: String,
-    // Impossible to use [FieldElement] here as by definition field elements are smaller
+    // Impossible to use [Felt] here as by definition field elements are smaller
     // than prime
     pub prime: String,
     pub reference_manager: LegacyReferenceManager,
@@ -73,7 +73,7 @@ pub struct LegacyProgram {
 pub struct RawLegacyEntryPoint {
     pub offset: LegacyEntrypointOffset,
     #[serde_as(as = "UfeHex")]
-    pub selector: FieldElement,
+    pub selector: Felt,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -281,17 +281,19 @@ struct AttributeForHintedHash;
 impl From<LegacyEntrypointOffset> for u64 {
     fn from(value: LegacyEntrypointOffset) -> Self {
         match value {
-            LegacyEntrypointOffset::U64AsHex(inner) => inner,
-            LegacyEntrypointOffset::U64AsInt(inner) => inner,
+            LegacyEntrypointOffset::U64AsHex(inner) | LegacyEntrypointOffset::U64AsInt(inner) => {
+                inner
+            }
         }
     }
 }
 
-impl From<LegacyEntrypointOffset> for FieldElement {
+impl From<LegacyEntrypointOffset> for Felt {
     fn from(value: LegacyEntrypointOffset) -> Self {
         match value {
-            LegacyEntrypointOffset::U64AsHex(inner) => inner.into(),
-            LegacyEntrypointOffset::U64AsInt(inner) => inner.into(),
+            LegacyEntrypointOffset::U64AsHex(inner) | LegacyEntrypointOffset::U64AsInt(inner) => {
+                inner.into()
+            }
         }
     }
 }
@@ -393,7 +395,7 @@ impl<'de> Deserialize<'de> for RawLegacyAbiEntry {
 }
 
 impl LegacyContractClass {
-    pub fn class_hash(&self) -> Result<FieldElement, ComputeClassHashError> {
+    pub fn class_hash(&self) -> Result<Felt, ComputeClassHashError> {
         let mut elements = Vec::new();
 
         elements.push(API_VERSION);
@@ -448,7 +450,7 @@ impl LegacyContractClass {
         Ok(compute_hash_on_elements(&elements))
     }
 
-    pub fn hinted_class_hash(&self) -> Result<FieldElement, ComputeClassHashError> {
+    pub fn hinted_class_hash(&self) -> Result<Felt, ComputeClassHashError> {
         #[serde_as]
         #[derive(Serialize)]
         struct ContractArtifactForHash<'a> {
@@ -497,10 +499,8 @@ impl LegacyProgram {
             #[serde(skip_serializing_if = "Option::is_none")]
             compiler_version: &'a Option<String>,
             #[serde_as(as = "Vec<UfeHex>")]
-            data: &'a Vec<FieldElement>,
-            // Needed due to pathfinder bug:
-            //   https://github.com/eqlabs/pathfinder/issues/1371
-            debug_info: EmptyDebugInfo,
+            data: &'a Vec<Felt>,
+            debug_info: Option<()>,
             hints: &'a BTreeMap<u64, Vec<LegacyHint>>,
             identifiers: &'a BTreeMap<String, LegacyIdentifier>,
             main_scope: &'a String,
@@ -508,24 +508,12 @@ impl LegacyProgram {
             reference_manager: &'a LegacyReferenceManager,
         }
 
-        #[derive(Serialize)]
-        pub struct EmptyDebugInfo {
-            file_contents: Unit,
-            instruction_locations: Unit,
-        }
-
-        #[derive(Serialize)]
-        pub struct Unit {}
-
         let program_json = serde_json::to_string(&ProgramWithoutDebugInfo {
             attributes: &self.attributes,
             builtins: &self.builtins,
             compiler_version: &self.compiler_version,
             data: &self.data,
-            debug_info: EmptyDebugInfo {
-                file_contents: Unit {},
-                instruction_locations: Unit {},
-            },
+            debug_info: None,
             hints: &self.hints,
             identifiers: &self.identifiers,
             main_scope: &self.main_scope,
@@ -607,7 +595,7 @@ impl SerializeAs<LegacyProgram> for ProgramForHintedHash {
             #[serde(skip_serializing_if = "Option::is_none")]
             compiler_version: &'a Option<String>,
             #[serde_as(as = "Vec<UfeHex>")]
-            data: &'a Vec<FieldElement>,
+            data: &'a Vec<Felt>,
             debug_info: &'a Option<LegacyDebugInfo>,
             hints: &'a BTreeMap<u64, Vec<LegacyHint>>,
             identifiers: &'a BTreeMap<String, LegacyIdentifier>,
@@ -909,7 +897,7 @@ mod tests {
             let computed_hash = artifact.class_hash().unwrap();
 
             let hashes: ContractHashes = serde_json::from_str(raw_hashes).unwrap();
-            let expected_hash = FieldElement::from_hex_be(&hashes.class_hash).unwrap();
+            let expected_hash = Felt::from_hex(&hashes.class_hash).unwrap();
 
             assert_eq!(computed_hash, expected_hash);
         }
@@ -954,7 +942,7 @@ mod tests {
             let computed_hash = artifact.hinted_class_hash().unwrap();
 
             let hashes: ContractHashes = serde_json::from_str(raw_hashes).unwrap();
-            let expected_hash = FieldElement::from_hex_be(&hashes.hinted_class_hash).unwrap();
+            let expected_hash = Felt::from_hex(&hashes.hinted_class_hash).unwrap();
 
             assert_eq!(computed_hash, expected_hash);
         }

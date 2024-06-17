@@ -20,7 +20,7 @@ To use the crate from [crates.io](https://crates.io/crates/starknet), add the fo
 
 ```toml
 [dependencies]
-starknet = "0.9.0"
+starknet = "0.11.0"
 ```
 
 Note that the [crates.io version](https://crates.io/crates/starknet) might be outdated. You may want to use the library directly from GitHub for all the latest features and fixes:
@@ -49,7 +49,6 @@ This workspace contains the following crates:
 - `starknet-crypto`: **Low-level** cryptography utilities for Starknet
 - `starknet-signers`: Starknet signer implementations
 - `starknet-accounts`: Types for handling Starknet account abstraction
-- `starknet-ff`: Starknet field element type
 - `starknet-curve`: Starknet curve operations
 - `starknet-macros`: Useful macros for using the `starknet` crates
 

@@ -4,29 +4,31 @@
 
 ## Benchmark
 
-These results were generated on the author's machine with _AMD Ryzen 9 5950X 16-Core Processor_ running _Ubuntu 22.04.1 LTS_.
+These results were generated on the author's machine with _Apple M3 Max_ running _macOS 14.5_.
 
 For instructions on running the benchmarks yourself, check out [this page](../BENCHMARK.md).
 
 ### Native
 
 ```log
-class_hash              time:   [21.680 ms 21.684 ms 21.688 ms]
+cairo0_class_hash       time:   [9.1665 ms 9.1690 ms 9.1718 ms]
+sierra_class_hash       time:   [6.6931 ms 6.6944 ms 6.6958 ms]
 ```
 
 ### WebAssembly
 
-_(With its excellent wasm performance, results are only provided for Node.js here. Check out the [benchmark page](../BENCHMARK.md) for running the benchmark on other runtimes)._
+_(Results are only provided for `wasmtime` here. Check out the [benchmark page](../BENCHMARK.md) for running the benchmark on other runtimes)._
 
 Runtime version:
 
 ```console
-$ node --version
-v18.16.0
+$ wasmtime --version
+wasmtime-cli 21.0.1 (cedf9aa0f 2024-05-22)
 ```
 
-Node.js results:
+`wasmtime` results:
 
 ```log
-class_hash              time:   [124.48 ms 124.58 ms 124.69 ms]
+cairo0_class_hash       time:   [36.515 ms 36.526 ms 36.538 ms]
+sierra_class_hash       time:   [22.550 ms 22.557 ms 22.567 ms]
 ```
