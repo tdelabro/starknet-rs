@@ -1,3 +1,4 @@
+use crate::serde::unsigned_field_element::UfeHex;
 use serde::{Deserialize, Serialize};
 use serde_with::serde_as;
 
@@ -56,14 +57,14 @@ impl Serialize for ReceiptBlock {
     where
         S: serde::Serializer,
     {
-        #[derive(Serialize)]
         #[serde_as]
-        struct Raw<'a> {
+        #[derive(Serialize)]
+        struct Raw {
             #[serde(skip_serializing_if = "Option::is_none")]
             #[serde_as(as = "Option<UfeHex>")]
-            block_hash: Option<&'a FieldElement>,
+            block_hash: Option<FieldElement>,
             #[serde(skip_serializing_if = "Option::is_none")]
-            block_number: Option<&'a u64>,
+            block_number: Option<u64>,
         }
 
         let raw = match self {
@@ -75,8 +76,8 @@ impl Serialize for ReceiptBlock {
                 block_hash,
                 block_number,
             } => Raw {
-                block_hash: Some(block_hash),
-                block_number: Some(block_number),
+                block_hash: Some(*block_hash),
+                block_number: Some(*block_number),
             },
         };
 
