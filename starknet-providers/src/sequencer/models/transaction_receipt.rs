@@ -76,6 +76,7 @@ pub struct ExecutionResources {
     pub n_memory_holes: u64,
     pub builtin_instance_counter: BuiltinInstanceCounter,
     pub data_availability: Option<DataAvailabilityResources>,
+    pub total_gas_consumed: Option<DataAvailabilityResources>
 }
 
 #[derive(Debug, Deserialize)]
