@@ -190,10 +190,7 @@ impl SequencerGatewayProvider {
         url
     }
 
-    async fn send_get_request<T>(&self, url: Url) -> Result<T, ProviderError>
-    where
-        T: DeserializeOwned,
-    {
+    async fn send_get_request_raw(&self, url: Url) -> Result<String, ProviderError> {
         trace!("Sending GET request to sequencer API ({})", url);
 
         let mut request = self.client.get(url);
@@ -206,11 +203,19 @@ impl SequencerGatewayProvider {
             Err(ProviderError::RateLimited)
         } else {
             let body = res.text().await.map_err(GatewayClientError::Network)?;
-
             trace!("Response from sequencer API: {}", body);
 
-            Ok(serde_json::from_str(&body).map_err(GatewayClientError::Serde)?)
+            Ok(body)
         }
+    }
+
+    async fn send_get_request<T>(&self, url: Url) -> Result<T, ProviderError>
+    where
+        T: DeserializeOwned,
+    {
+        let body = self.send_get_request_raw(url).await?;
+
+        Ok(serde_json::from_str(&body).map_err(GatewayClientError::Serde)?)
     }
 
     async fn send_post_request<Q, S>(&self, url: Url, body: &Q) -> Result<S, ProviderError>
@@ -367,9 +372,23 @@ impl SequencerGatewayProvider {
             .append_pair("classHash", &format!("{class_hash:#x}"));
         append_block_id(&mut request_url, block_identifier);
 
-        self.send_get_request::<GatewayResponse<_>>(request_url)
-            .await?
-            .into()
+        // `body` can be a `FlattenedSierraClass`, a `LegacyContractClass` or a `SequenceError`.
+        // All are "untagged", meaning we have to try them out sequencialy to find out which it is.
+        // Due to `serde` limitations, we cannot express this inside a `Deserialize` impl while using `raw_value`,
+        // so we don't follow the regular deserialization flow, and do it outside of the trait.
+        let body = self.send_get_request_raw(request_url).await?.into_bytes();
+
+        if let Ok(value) = DeployedClass::deserialize_from_json_deployed_class(&body) {
+            return Ok(value);
+        }
+        if let Ok(value) = serde_json::from_slice::<SequencerError>(&body) {
+            return Err(value.into());
+        }
+
+        Err(GatewayClientError::Serde(serde::de::Error::custom(
+            "data did not match any variant of enum GatewayResponse",
+        ))
+        .into())
     }
 
     #[deprecated(
@@ -589,33 +608,46 @@ mod tests {
         ]
         .into_iter()
         {
-            serde_json::from_str::<GatewayResponse<DeployedClass>>(raw).unwrap();
+            DeployedClass::deserialize_from_json_deployed_class(raw.as_bytes()).unwrap();
         }
     }
 
     #[test]
     #[cfg_attr(target_arch = "wasm32", wasm_bindgen_test::wasm_bindgen_test)]
-    fn test_get_class_by_hash_deser_not_declared() {
-        match serde_json::from_str::<GatewayResponse<DeployedClass>>(include_str!(
-            "../../test-data/raw_gateway_responses/get_class_by_hash/2_not_declared.txt"
+    fn test_get_block_deser_does_not_exist() {
+        match serde_json::from_str::<GatewayResponse<Block>>(include_str!(
+            "../../test-data/raw_gateway_responses/get_block/16_does_not_exist.txt"
         ))
         .unwrap()
         {
             GatewayResponse::SequencerError(err) => {
-                assert_eq!(err.code, ErrorCode::UndeclaredClass);
+                assert_eq!(err.code, ErrorCode::BlockNotFound);
             }
             _ => panic!("Unexpected result"),
         }
     }
 
-    #[test]
-    #[cfg_attr(target_arch = "wasm32", wasm_bindgen_test::wasm_bindgen_test)]
-    fn test_error_deser_invalid_contract_class() {
-        let error: SequencerError = serde_json::from_str(include_str!(
-            "../../test-data/serde/sequencer_error_invalid_contract_class.json"
-        ))
-        .unwrap();
+    #[tokio::test]
+    #[allow(deprecated)]
+    async fn big_felt_are_deserialized_using_raw_data() {
+        let provider = SequencerGatewayProvider::starknet_alpha_mainnet();
 
-        assert_eq!(error.code, ErrorCode::InvalidContractClass);
+        let class_hash = Felt::from_hex_unchecked(
+            "0x50ca5f07e12e74a7f0c4dea9cdd26b34a29780be00d1430a6d511f933ec9ec6",
+        );
+
+        let contract_class = provider
+            .get_class_by_hash(class_hash, BlockId::Latest)
+            .await
+            .unwrap();
+
+        let computed_class_hash = match contract_class {
+            DeployedClass::SierraClass(_) => panic!("this should be a legacy contract"),
+            DeployedClass::LegacyClass(cc) => cc.class_hash().unwrap(),
+        };
+
+        // This contract contains big fields, if it is deserialized without using `raw_values`,
+        // those will be treated as float and the values will change, therefore chainging the class hash
+        assert_eq!(class_hash, computed_class_hash);
     }
 }

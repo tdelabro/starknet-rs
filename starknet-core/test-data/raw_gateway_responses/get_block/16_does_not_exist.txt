@@ -1,0 +1,1 @@
+{"code": "StarknetErrorCode.BLOCK_NOT_FOUND", "message": "Block hash 0x0 does not exist."}

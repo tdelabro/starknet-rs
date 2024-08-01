@@ -1,7 +1,7 @@
-use std::io::Write;
+use std::{fmt::Formatter, io::Write};
 
 use flate2::{write::GzEncoder, Compression};
-use serde::{Deserialize, Deserializer, Serialize};
+use serde::{de::Error, Deserialize, Deserializer, Serialize};
 use serde_with::serde_as;
 use starknet_core::{
     serde::{byte_array::base64::serialize as base64_ser, unsigned_field_element::UfeHex},
@@ -52,23 +52,60 @@ pub enum DecompressProgramError {
     Io(std::io::Error),
 }
 
-// We need to manually implement this because `raw_value` doesn't work with `untagged`:
-//   https://github.com/serde-rs/serde/issues/1183
-impl<'de> Deserialize<'de> for DeployedClass {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: Deserializer<'de>,
-    {
-        let temp_value = serde_json::Value::deserialize(deserializer)?;
-        if let Ok(value) = FlattenedSierraClass::deserialize(&temp_value) {
-            return Ok(Self::SierraClass(value));
+impl DeployedClass {
+    // We need to manually implement this because `raw_value` doesn't work with `untagged`:
+    // https://github.com/serde-rs/serde/issues/1183
+    // Preventing us to impl `Deserialize` on DeployedClass in a satisfying way.
+    pub fn deserialize_from_json_deployed_class(json: &[u8]) -> Result<Self, serde_json::Error> {
+        // Those are the fields of both `FlattenedSierraClass` and `LegacyClass` mixed together.
+        // We don't deserialize their content, we just check whether or not those fields are present.
+        #[derive(Deserialize)]
+        struct BulkDeployedClassFields<'a> {
+            // Common fields
+            #[serde(borrow)]
+            pub entry_points_by_type: &'a serde_json::value::RawValue,
+            #[serde(borrow)]
+            pub abi: &'a serde_json::value::RawValue,
+            // Sierra contract specific fields
+            #[serde(borrow)]
+            #[serde(skip_serializing_if = "Option::is_none")]
+            pub sierra_program: Option<&'a serde_json::value::RawValue>,
+            #[serde(borrow)]
+            #[serde(skip_serializing_if = "Option::is_none")]
+            pub contract_class_version: Option<&'a serde_json::value::RawValue>,
+            // Cairo countract specific field
+            #[serde(borrow)]
+            #[serde(skip_serializing_if = "Option::is_none")]
+            pub program: Option<&'a serde_json::value::RawValue>,
         }
-        if let Ok(value) = LegacyContractClass::deserialize(&temp_value) {
-            return Ok(Self::LegacyClass(value));
-        }
-        Err(serde::de::Error::custom(
-            "data did not match any variant of enum DeployedClass",
-        ))
+
+        let buld_fields: BulkDeployedClassFields = serde_json::from_slice(json).unwrap();
+
+        let deployed_class = match buld_fields.program {
+            Some(program) => DeployedClass::LegacyClass(LegacyContractClass {
+                abi: serde_json::from_str(buld_fields.abi.get())?,
+                entry_points_by_type: serde_json::from_str(buld_fields.entry_points_by_type.get())?,
+                program: serde_json::from_str(program.get())?,
+            }),
+            None => DeployedClass::SierraClass(FlattenedSierraClass {
+                sierra_program: serde_json::from_str(
+                    buld_fields
+                        .sierra_program
+                        .ok_or(serde_json::Error::missing_field("sierra_program"))?
+                        .get(),
+                )?,
+                contract_class_version: serde_json::from_str(
+                    buld_fields
+                        .contract_class_version
+                        .ok_or(serde_json::Error::missing_field("contract_class_version"))?
+                        .get(),
+                )?,
+                entry_points_by_type: serde_json::from_str(buld_fields.entry_points_by_type.get())?,
+                abi: serde_json::from_str(buld_fields.abi.get())?,
+            }),
+        };
+
+        Ok(deployed_class)
     }
 }
 
